@@ -111,7 +111,7 @@ def ip_batch_inspection(read_path, save_path):
             count += 1
             ip_proxies = line.replace("\n", "")
             try:
-                is_local = ip_test(ip_proxies)
+                is_local = ip_test(ip_proxies)  # 如果是本地ip，返回值为大于0数值
                 if is_local < 0:
                     with open(save_path, "a") as fs:
                         fs.write(ip_proxies + "\n")
